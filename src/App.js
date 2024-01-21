@@ -31,7 +31,7 @@ const App = () => {
     // create session
     const arrBufNet = await download(
       `${baseModelURL}/${modelName}`, // url
-      ["Loading YOLOv8 Segmentation model", setLoading] // logger
+      ["Loading Garbage Classification Model", setLoading] // logger
     );
     const yolov8 = await InferenceSession.create(arrBufNet);
     const arrBufNMS = await download(
