@@ -8,14 +8,17 @@ import "./style/App.css";
 
 const App = () => {
   const [session, setSession] = useState(null);
-  const [loading, setLoading] = useState({ text: "Loading OpenCV.js", progress: null });
+  const [loading, setLoading] = useState({
+    text: "Loading OpenCV.js",
+    progress: null,
+  });
   const [image, setImage] = useState(null);
   const inputImage = useRef(null);
   const imageRef = useRef(null);
   const canvasRef = useRef(null);
 
   // Configs
-  const modelName = "yolov8n.onnx";
+  const modelName = "best.onnx";
   const modelInputShape = [1, 3, 640, 640];
   const topk = 100;
   const iouThreshold = 0.45;
@@ -54,17 +57,16 @@ const App = () => {
     <div className="App">
       {loading && (
         <Loader>
-          {loading.progress ? `${loading.text} - ${loading.progress}%` : loading.text}
+          {loading.progress
+            ? `${loading.text} - ${loading.progress}%`
+            : loading.text}
         </Loader>
       )}
       <div className="header">
-        <h1>YOLOv8 Object Detection App</h1>
+        <h1>Garbage Classification</h1>
         <p>
-          YOLOv8 object detection application live on browser powered by{" "}
-          <code>onnxruntime-web</code>
-        </p>
-        <p>
-          Serving : <code className="code">{modelName}</code>
+          Connected with{" "}
+          <code>Garbage Management and Classification Application</code>
         </p>
       </div>
 
